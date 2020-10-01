@@ -1,0 +1,46 @@
+
+        <div class="panel panel-signin">
+            <div class="panel-body">
+                <div class="logo text-center">
+                    <img src="/assets/images/brand-logo.png" alt="" >
+                </div>
+                <br />
+                <h4 class="text-center mb5">Вход в личный кабинет</h4>
+                <a href="sign_up"  class="btn btn-primary btn-block">Регистрация нового пользователя</a>
+                <p id="notice"><%= notice %></p>
+                  <div class="card mt-5">
+                      <p class = "notice"> <%= notice %></p>
+                      <p class = "alert"> <%= alert %></p>
+
+
+
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                    <div class="input-group mb15">
+                      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' , placeholder: 'E-mail' %>
+                    </div><!-- input-group -->
+                    <div class="input-group mb15">
+                      <%= f.password_field :password, autocomplete: "current-password", class: 'form-control is-invalid', placeholder: 'Пароль'  %>
+                    </div><!-- input-group -->
+
+                    <div class="clearfix">
+                        <div class="pull-left">
+                          <% if devise_mapping.rememberable? %>
+                            <div class="ckbox ckbox-primary mt10">
+                                <%= f.check_box :remember_me %>
+                                <%= f.label :remember_me %>
+                            </div>
+                          <% end %>
+                        </div>
+                        <div class="pull-right">
+                              <%= f.submit "Войти ", class: 'btn btn-primary btn-block' %>
+
+                        </div>
+                    </div>
+
+                    <%= render "devise/shared/links" %>
+                  <% end %>
+
+
+            </div><!-- panel-body -->
+            
+        </div><!-- panel -->

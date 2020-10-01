@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><!-- End Required meta tags -->
+    <!-- Begin SEO tag -->
+    <title> менеджер проектов V.1.0 </title>
+
+    <!-- FAVICONS -->
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/apple-touch-icon.png">
+    <link rel="shortcut icon" href="assets/favicon.ico">
+    <meta name="theme-color" content="#3063A0"><!-- End FAVICONS -->
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600" rel="stylesheet"><!-- End GOOGLE FONT -->
+    <!-- BEGIN PLUGINS STYLES -->
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+ <style><%= yield :stylesheets %></style>
+
+    <script>
+      var skin = localStorage.getItem('skin') || 'default';
+      var disabledSkinStylesheet = document.querySelector('link[data-skin]:not([data-skin="' + skin + '"])');
+      // Disable unused skin immediately
+      disabledSkinStylesheet.setAttribute('rel', '');
+      disabledSkinStylesheet.setAttribute('disabled', true);
+      // add loading class to html immediately
+      document.querySelector('html').classList.add('loading');
+    </script><!-- END THEME STYLES -->
+  </head>
+  <!-- Favicons -->
+
+
+  <body>
+
+
+    <!-- .app -->
+    <div class="app has-fullwidth">
+      <!--[if lt IE 10]>
+      <div class="page-message" role="alert">You are using an <strong>outdated</strong> browser. Please <a class="alert-link" href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</div>
+      <![endif]-->
+     <!-- .app-header -->
+      <!-- .app-header -->
+
+      <% if user_signed_in? %>
+        <%= render :partial => "layouts/menu"  %>
+      <% end %>
+
+
+
+      <!-- /.app-header -->
+      <!-- .app-main -->
+      <main class="app-main">
+        <!-- .wrapper -->
+        <div class="wrapper">
+
+          <div class="container">
+
+               <div id="content"><%= content_for?(:content) ? yield(:content) : yield %></div>
+          </div>
+
+          <!-- .page -->
+
+        </div><!-- /.wrapper -->
+        <!-- .app-footer -->
+
+      </main><!-- /.app-main -->
+    </div><!-- /.app -->
+    <!-- BEGIN BASE JS -->
+
+
+  </body>
+</html>

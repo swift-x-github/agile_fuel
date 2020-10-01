@@ -1,0 +1,30 @@
+<div class="jumbotron">
+  <%= link_to 'Edit', edit_todo_list_todo_item_path(@todo_item.todo_list, @todo_item, class: 'btn btn-success')%> |
+  <%= link_to 'Список задач', todo_list_todo_items_path(@todo_item.todo_list), class: 'btn btn-primary' %>
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <b>Description:</b>
+    <%= @todo_item.description %>
+  </p>
+
+  <p>
+    <b>Completed:</b>
+    <%= @todo_item.completed %>
+  </p>
+
+  <p>
+    <b>Complited at:</b>
+    <%= @todo_item.complited_at %>
+  </p>
+
+  <p>
+    <b>Todo list:</b>
+    <%= @todo_item.todo_list %>
+  </p>
+
+
+
+
+
+</div>

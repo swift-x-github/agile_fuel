@@ -1,0 +1,10 @@
+<div class="jumbotron">
+  <h1>Редактирование названия проекта</h1>
+
+  <%= render 'form', todo_list: @todo_list %>
+
+  <%= link_to 'Просмотр', @todo_list, class: 'btn btn-primary' %> |
+  <%= link_to 'Вернуться к проектам', todo_lists_path, class: 'btn btn-primary' %>
+
+
+</div>

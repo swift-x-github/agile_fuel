@@ -1,0 +1,35 @@
+
+<div class="jumbotron">
+  <h1>Список пользователей </h1>
+
+  <table class = "table table-bordered">
+    <tr>
+      <th>Description</th>
+      <th>Completed</th>
+      <th>Complited at</th>
+      <th>Todo list</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= todo_item.description %></td>
+      <td><%= todo_item.completed %></td>
+      <td><%= todo_item.complited_at %></td>
+      <td><%= todo_item.todo_list %></td>
+      <td><%= link_to 'Просмотр', [todo_item.todo_list, todo_item] , class: 'btn btn-primary' %></td>
+      <td><%= link_to 'Редактировать', edit_todo_list_todo_item_path(todo_item.todo_list, todo_item) %></td>
+      <td><%= link_to 'Удалить', [todo_item.todo_list, todo_item], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'  %></td>
+    </tr>
+  <% end %>
+  </table>
+
+  <br />
+
+  <%= link_to 'Новая задача', new_todo_list_todo_item_path(params[:todo_list_id]), class: 'btn btn-success' %>
+
+
+  <%= link_to 'назад', todo_lists_path, class: 'btn btn-secondary'  %>
+</div>
