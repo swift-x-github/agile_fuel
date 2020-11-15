@@ -50,11 +50,14 @@ class TodoItemsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_todo_list
-      @todo_list = TodoList.find(params[:todo_list_id])
+      @todo_list = TodoList.where(user_id: current_user.id).find(params[:todo_list_id])
+
+
     end
 
     def set_todo_item
       @todo_item = @todo_list.todo_items.find(params[:id])
+      
     end
 
     # Only allow a trusted parameter "white list" through.

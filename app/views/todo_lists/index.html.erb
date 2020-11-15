@@ -1,8 +1,14 @@
 
+
+
+
+<% if user_signed_in? %>
+
 <div class="jumbotron">
   <div class="card-body">
         <ul class= 'list-group'>
-          <% @todo_lists.each do |todo_list| %>
+          <%  @todo_lists.each do |todo_list| %>
+             
               <%= link_to todo_list, class: 'text-decoration-none'  do %>
                   <li class="list-group-item d-flex justify-content-between">
                     <div>
@@ -17,8 +23,11 @@
 
                   </li>
               <% end %>
+              
           <% end %>
         </ul>
    </div>
 
 </div>
+
+<% end %>

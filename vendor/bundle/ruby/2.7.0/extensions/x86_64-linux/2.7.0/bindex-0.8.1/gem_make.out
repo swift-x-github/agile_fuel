@@ -1,0 +1,15 @@
+current directory: /home/suprun/ruby_work/todo_app_backup/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
+/home/suprun/.rvm/rubies/ruby-2.7.1/bin/ruby -I /home/suprun/.rvm/rubies/ruby-2.7.1/lib/ruby/site_ruby/2.7.0 -r ./siteconf20201115-8416-k05a56.rb extconf.rb
+creating Makefile
+
+current directory: /home/suprun/ruby_work/todo_app_backup/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /home/suprun/ruby_work/todo_app_backup/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/suprun/ruby_work/todo_app_backup/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -m 0755 cruby.so ./.gem.20201115-8416-1r468hn/skiptrace/internal

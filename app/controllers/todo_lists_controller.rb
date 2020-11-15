@@ -1,10 +1,10 @@
 class TodoListsController < ApplicationController
   before_action :set_todo_list, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user! 
   # GET /todo_lists
   # GET /todo_lists.json
   def index
-    @todo_lists = TodoList.all
+    @todo_lists = TodoList.where(user_id: current_user.id)
   end
 
   # GET /todo_lists/1
@@ -16,6 +16,7 @@ class TodoListsController < ApplicationController
   # GET /todo_lists/new
   def new
     @todo_list = TodoList.new
+    
   end
 
   # GET /todo_lists/1/edit
@@ -26,7 +27,7 @@ class TodoListsController < ApplicationController
   # POST /todo_lists.json
   def create
     @todo_list = TodoList.new(todo_list_params)
-
+    @todo_list.user_id = current_user.id
     respond_to do |format|
       if @todo_list.save
         format.html { redirect_to root_url, notice: 'Todo list was successfully created.' }
@@ -42,7 +43,7 @@ class TodoListsController < ApplicationController
   # PATCH/PUT /todo_lists/1.json
   def update
     respond_to do |format|
-      if @todo_list.update(todo_list_params)
+      if @todo_list.update(todo_list_params).where(user_id: current_user.id)
         format.html { redirect_to root_url, notice: 'Todo list was successfully updated.' }
         format.json { render :show, status: :ok, location: @todo_list }
       else
@@ -65,7 +66,8 @@ class TodoListsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_todo_list
-      @todo_list = TodoList.find(params[:id])
+     @todo_list = TodoList.where(user_id: current_user.id).find(params[:id]) 
+     
     end
 
     # Only allow a list of trusted parameters through.

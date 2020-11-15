@@ -1,0 +1,43 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Broadcaster	lib/cable_ready/broadcaster.rb	/^  module Broadcaster$/;"	m	class:CableReady
+CableReady	lib/cable_ready.rb	/^module CableReady$/;"	m
+CableReady	lib/cable_ready/broadcaster.rb	/^module CableReady$/;"	m
+CableReady	lib/cable_ready/channel.rb	/^module CableReady$/;"	m
+CableReady	lib/cable_ready/channels.rb	/^module CableReady$/;"	m
+CableReady	lib/cable_ready/version.rb	/^module CableReady$/;"	m
+Channel	lib/cable_ready/channel.rb	/^  class Channel$/;"	c	class:CableReady
+Channels	lib/cable_ready/channels.rb	/^  class Channels$/;"	c	class:CableReady
+Engine	lib/cable_ready.rb	/^  class Engine < Rails::Engine$/;"	c	class:CableReady
+[]	lib/cable_ready/channels.rb	/^    def [](channel_name)$/;"	f	class:CableReady.Channels
+add_css_class	lib/cable_ready/channel.rb	/^    def add_css_class(options = {})$/;"	f	class:CableReady.Channel
+add_operation	lib/cable_ready/channel.rb	/^    def add_operation(key, options)$/;"	f	class:CableReady.Channel
+broadcast	lib/cable_ready/channel.rb	/^    def broadcast$/;"	f	class:CableReady.Channel
+broadcast	lib/cable_ready/channels.rb	/^    def broadcast$/;"	f	class:CableReady.Channels
+cable_ready	lib/cable_ready/broadcaster.rb	/^    def cable_ready$/;"	f	class:CableReady.Broadcaster
+clear	lib/cable_ready/channel.rb	/^    def clear$/;"	f	class:CableReady.Channel
+clear	lib/cable_ready/channels.rb	/^    def clear$/;"	f	class:CableReady.Channels
+const.bubbles	javascript/cable_ready.js	/^  const init = { bubbles: true, cancelable: true }$/;"	p
+const.cancelable	javascript/cable_ready.js	/^  const init = { bubbles: true, cancelable: true }$/;"	p
+const.dispatchEvent	javascript/cable_ready.js	/^  dispatchEvent: config => {$/;"	p
+dispatch_event	lib/cable_ready/channel.rb	/^    def dispatch_event(options = {})$/;"	f	class:CableReady.Channel
+initialize	lib/cable_ready/channel.rb	/^    def initialize(name)$/;"	f	class:CableReady.Channel
+initialize	lib/cable_ready/channels.rb	/^    def initialize$/;"	f	class:CableReady.Channels
+inner_html	lib/cable_ready/channel.rb	/^    def inner_html(options = {})$/;"	f	class:CableReady.Channel
+insert_adjacent_html	lib/cable_ready/channel.rb	/^    def insert_adjacent_html(options = {})$/;"	f	class:CableReady.Channel
+insert_adjacent_text	lib/cable_ready/channel.rb	/^    def insert_adjacent_text(options = {})$/;"	f	class:CableReady.Channel
+morph	lib/cable_ready/channel.rb	/^    def morph(options = {})$/;"	f	class:CableReady.Channel
+outer_html	lib/cable_ready/channel.rb	/^    def outer_html(options = {})$/;"	f	class:CableReady.Channel
+remove	lib/cable_ready/channel.rb	/^    def remove(options = {})$/;"	f	class:CableReady.Channel
+remove_attribute	lib/cable_ready/channel.rb	/^    def remove_attribute(options = {})$/;"	f	class:CableReady.Channel
+remove_css_class	lib/cable_ready/channel.rb	/^    def remove_css_class(options = {})$/;"	f	class:CableReady.Channel
+set_attribute	lib/cable_ready/channel.rb	/^    def set_attribute(options = {})$/;"	f	class:CableReady.Channel
+set_cookie	lib/cable_ready/channel.rb	/^    def set_cookie(value)$/;"	f	class:CableReady.Channel
+set_dataset_property	lib/cable_ready/channel.rb	/^    def set_dataset_property(options = {})$/;"	f	class:CableReady.Channel
+set_value	lib/cable_ready/channel.rb	/^    def set_value(options = {})$/;"	f	class:CableReady.Channel
+stub	lib/cable_ready/channel.rb	/^    def stub$/;"	f	class:CableReady.Channel
+text_content	lib/cable_ready/channel.rb	/^    def text_content(options = {})$/;"	f	class:CableReady.Channel

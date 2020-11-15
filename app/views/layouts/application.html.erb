@@ -55,8 +55,7 @@
         <%= render :partial => "layouts/menu"  %>
       <% end %>
 
-
-
+    
       <!-- /.app-header -->
       <!-- .app-main -->
       <main class="app-main">
@@ -64,7 +63,7 @@
         <div class="wrapper">
 
           <div class="container">
-
+           <%= render :partial => "layouts/notice"  %>
                <div id="content"><%= content_for?(:content) ? yield(:content) : yield %></div>
           </div>
 
