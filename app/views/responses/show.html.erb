@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Question:</b>
+  <%= @response.question %>
+</p>
+
+<p>
+  <b>Answer:</b>
+  <%= @response.answer %>
+</p>
+
+<p>
+  <b>Experience:</b>
+  <%= @response.experience %>
+</p>
+
+
+<%= link_to 'Edit', edit_experience_response_path(@response.experience, @response) %> |
+<%= link_to 'Back', experience_responses_path(@response.experience) %>

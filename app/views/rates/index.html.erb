@@ -1,0 +1,27 @@
+<h1>Listing rates</h1>
+
+<table>
+  <tr>
+    <th>Rate</th>
+    <th>Ip</th>
+    <th>Experience</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @rates.each do |rate| %>
+  <tr>
+    <td><%= rate.rate %></td>
+    <td><%= rate.ip %></td>
+    <td><%= rate.experience %></td>
+    <td><%= link_to 'Show', [rate.experience, rate] %></td>
+    <td><%= link_to 'Edit', edit_experience_rate_path(rate.experience, rate) %></td>
+    <td><%= link_to 'Destroy', [rate.experience, rate], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Rate', new_experience_rate_path(params[:experience_id]) %>
