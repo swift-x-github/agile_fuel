@@ -1,15 +1,16 @@
 class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user! 
   # GET /experiences
   # GET /experiences.json
   def index
-    @experiences = Experience.all
+    @experiences = Experience.where(user_id: current_user.id)
   end
 
   # GET /experiences/1
   # GET /experiences/1.json
   def show
+    @response = Response.new
   end
 
   # GET /experiences/new
@@ -25,6 +26,7 @@ class ExperiencesController < ApplicationController
   # POST /experiences.json
   def create
     @experience = Experience.new(experience_params)
+    @experience.user_id = current_user.id
 
     respond_to do |format|
       if @experience.save
@@ -64,11 +66,11 @@ class ExperiencesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_experience
-      @experience = Experience.find(params[:id])
+      @experience = Experience.where(user_id: current_user.id).find(params[:id]) 
     end
 
     # Only allow a list of trusted parameters through.
     def experience_params
-      params.require(:experience).permit(:name, :user_id)
+      params.require(:experience).permit(:name)
     end
 end

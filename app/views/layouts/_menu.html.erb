@@ -13,9 +13,12 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
 
+      <li class="nav-item dropdown">  
+          <%= link_to 'All experiences', experiences_path, class: 'nav-link dropdown-toggle' %>
 
+      </li>
       <li class="nav-item dropdown">
-          <%= link_to 'New project', new_todo_list_path, class: 'nav-link dropdown-toggle' %>
+          <%= link_to 'New experience', new_experience_path, class: 'nav-link dropdown-toggle' %>
 
       </li>
       <li class="nav-item">

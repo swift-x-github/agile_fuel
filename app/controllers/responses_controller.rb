@@ -1,6 +1,7 @@
 class ResponsesController < ApplicationController
   before_action :set_experience
   before_action :set_response, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET experiences/1/responses
   def index
@@ -50,7 +51,8 @@ class ResponsesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_experience
-      @experience = Experience.find(params[:experience_id])
+      
+      @experience =  Experience.where(user_id: current_user.id).find(params[:experience_id])
     end
 
     def set_response

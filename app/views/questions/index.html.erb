@@ -1,0 +1,25 @@
+<h1>Listing questions</h1>
+
+<table class = "table">
+  <tr>
+    <th>Question</th>
+    <th>Experience</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @questions.each do |question| %>
+  <tr>
+    <td><%= question.question %></td>
+    <td><%= question.experience.id %></td>
+    <td><%= link_to 'Show', [question.experience, question] %></td>
+    <td><%= link_to 'Edit', edit_experience_question_path(question.experience, question) %></td>
+    <td><%= link_to 'Destroy', [question.experience, question], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Question', new_experience_question_path(params[:experience_id]) %>

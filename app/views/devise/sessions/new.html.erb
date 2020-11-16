@@ -14,7 +14,7 @@
 
 
 
-                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: 'form-signin' ) do |f| %>
                     <div class="input-group mb15">
                       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' , placeholder: 'E-mail' %>
                     </div><!-- input-group -->

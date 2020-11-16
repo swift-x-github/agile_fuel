@@ -1,12 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Experiences</h1>
+<h1>Experiences list ( <%= @experiences.count %> )</h1>
 
-<table>
+<table class = "table table-striped table-sm">
   <thead>
     <tr>
       <th>Name</th>
-      <th>User</th>
+      <th>Responses</th>
+      <th>Questions</th>
+      <th>Rates</th>
+      <th>Rating</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,11 +17,15 @@
   <tbody>
     <% @experiences.each do |experience| %>
       <tr>
-        <td><%= experience.name %></td>
-        <td><%= experience.user_id %></td>
-        <td><%= link_to 'Show', experience %></td>
-        <td><%= link_to 'Edit', edit_experience_path(experience) %></td>
-        <td><%= link_to 'Destroy', experience, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to experience.name, experience_responses_path(experience) %></td>
+        <td><%= link_to experience.responses.count, experience_responses_path(experience) %></td>  
+        <td><%= link_to 'questions', experience_questions_path(experience) %></td> 
+        <td><%= link_to experience.rates.count, experience_rates_path(experience) %></td>  
+        <td> <%= experience.rates.count %> </td>
+        <td>  </td> 
+        <td><%= link_to 'Show ', experience %></td>
+        <td><%= link_to 'Edit ', edit_experience_path(experience) %></td>
+        <td><%= link_to 'Destroy ', experience, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
