@@ -5,6 +5,7 @@ class RatesController < ApplicationController
   # GET experiences/1/rates
   def index
     @rates = @experience.rates
+   
   end
 
   # GET experiences/1/rates/1

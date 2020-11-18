@@ -8,8 +8,8 @@
       <th>Name</th>
       <th>Responses</th>
       <th>Questions</th>
-      <th>Rates</th>
-      <th>Rating</th>
+      <th>Rates number</th>
+      <th>Rating info</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,11 +18,11 @@
     <% @experiences.each do |experience| %>
       <tr>
         <td><%= link_to experience.name, experience_responses_path(experience) %></td>
-        <td><%= link_to experience.responses.count, experience_responses_path(experience) %></td>  
-        <td><%= link_to 'questions', experience_questions_path(experience) %></td> 
-        <td><%= link_to experience.rates.count, experience_rates_path(experience) %></td>  
-        <td> <%= experience.rates.count %> </td>
-        <td>  </td> 
+        <td><%= link_to experience.total_responses_number, experience_responses_path(experience) %></td>  
+        <td><%= link_to experience.total_questions_number, experience_questions_path(experience) %></td> 
+        <td><%= link_to experience.total_rates_number, experience_rates_path(experience) %></td>  
+        <td> <%= experience.total_raiting_summa(experience.id) %> </td>
+        <td> <%=       %> </td> 
         <td><%= link_to 'Show ', experience %></td>
         <td><%= link_to 'Edit ', edit_experience_path(experience) %></td>
         <td><%= link_to 'Destroy ', experience, method: :delete, data: { confirm: 'Are you sure?' } %></td>

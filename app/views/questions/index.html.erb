@@ -12,7 +12,7 @@
 <% @questions.each do |question| %>
   <tr>
     <td><%= question.question %></td>
-    <td><%= question.experience.id %></td>
+    <td><%= question.experience.name %></td>
     <td><%= link_to 'Show', [question.experience, question] %></td>
     <td><%= link_to 'Edit', edit_experience_question_path(question.experience, question) %></td>
     <td><%= link_to 'Destroy', [question.experience, question], method: :delete, data: { confirm: 'Are you sure?' } %></td>
