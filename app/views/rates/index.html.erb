@@ -1,11 +1,12 @@
 <h1>Listing rates " <%= @experience.name %> "" </h1>
 <h2>  Total raits number  <%= @experience.total_rates_number  %> </h2>
-<h2>  Total raiting summa<td> <%= @experience.total_raiting_summa(@experience.id) %> </td></h2>
+<h2>  Total raiting summa<td> <%= @experience.total_raiting(@experience.id) %> </td></h2>
 
 
 <table class = "table">
   <tr>
-    <th>Rate</th>
+    <th>Rate bals</th>
+   
     <th>Ip</th>
     <th>Experience</th>
     <th></th>
@@ -16,6 +17,7 @@
 <% @rates.each do |rate| %>
   <tr>
     <td><%= rate.rate %></td>
+    
     <td><%= rate.ip %></td>
     <td><%= rate.experience.name %></td>
    
