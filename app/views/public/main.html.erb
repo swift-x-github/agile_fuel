@@ -1,0 +1,34 @@
+<h1>experience list</h1>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Experiences list ( <%= @experiences.count %> )</h1>
+
+<table class = "table table-striped table-sm">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Responses</th>
+      <th>Questions</th>
+      <th>Rates </th>
+      <th>Rating info</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @experiences.each do |experience| %>
+      <tr>
+        <td><%= link_to experience.name, experience_responses_path(experience) %></td>
+        <td><%= link_to experience.total_responses_number, experience_responses_path(experience) %></td>  
+        <td><%= link_to experience.total_questions_number, experience_questions_path(experience) %></td> 
+        <td><%= link_to experience.total_rates_number, experience_rates_path(experience) %></td>  
+        <td> <%= experience.total_raiting(experience.id) %> </td>
+        <td> <%=       %> </td> 
+        <td><%= link_to 'Show ', experience %></td>
+        <td><%= link_to 'Edit ', edit_experience_path(experience) %></td>
+        <td><%= link_to 'Destroy ', experience, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

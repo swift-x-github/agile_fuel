@@ -21,7 +21,7 @@ class Experience < ApplicationRecord
   end
 
 
-  # это сколько всего записей в этом експиренсе
+  # это сколько всего отзывово в этом експиренсе
   def total_responses_number
     @total_responses_number ||= responses.count
   end
