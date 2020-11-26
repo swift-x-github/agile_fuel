@@ -1,0 +1,30 @@
+<%= link_to 'All experiences', experiences_path , class: 'btn btn-primary'%>
+<h3>Listing responses</h3>
+
+<table class = "table">
+  <tr>
+    <th>Name</th>
+    <th>Raiting</th>
+    <th>Ip</th>
+    <th>Experience</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @responses.each do |response| %>
+  <tr>
+    <td><%= response.name %></td>
+    <td><%= response.raiting %></td>
+    <td><%= response.ip %></td>
+    <td><%= response.experience.name %></td>
+    <td><%= link_to 'Show', [response.experience, response] %></td>
+    <td><%= link_to 'Edit', edit_experience_response_path(response.experience, response) %></td>
+    <td><%= link_to 'Destroy', [response.experience, response], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Response', new_experience_response_path(params[:experience_id]) , class: 'btn btn-primary'%>

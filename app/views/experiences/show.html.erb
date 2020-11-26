@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <strong>Name:</strong>
+  <%= @experience.name %>
+</h1>
+
+<%= link_to 'Edit', edit_experience_path(@experience) %> |
+<%= link_to 'Back', experiences_path, class: 'btn btn-primary' %>
+
+<%= link_to 'new feedback ', new_experience_response_path(@experience), class: 'btn btn-primary' %>

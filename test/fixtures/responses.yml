@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  raiting: 1
+  ip: MyString
+  experience: one
+
+two:
+  name: MyString
+  raiting: 1
+  ip: MyString
+  experience: two

@@ -1,0 +1,35 @@
+<%= form_for([@response.experience, @response]) do |f| %>
+  <% if @response.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@response.errors.count, "error") %> prohibited this response from being saved:</h2>
+
+      <ul>
+      <% @response.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :raiting %><br />
+   
+      <%= f.select :raiting, options_for_select([['5 greate',7], ['awesome (5)',6], ['4 OK',5], ['4',4], ['not bad',3], ['2 bad',2], ['1 awful',1]]) %>
+  </div>
+  <div class="field">
+    <%= f.label :ip %><br />
+    
+    <%= f.hidden_field :ip, value: request.remote_ip %>
+  </div>
+  <div class="field">
+    <%= f.label :experience %><br />
+    <%= f.hidden_field :experience %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: 'btn btn-primary'%>
+  </div>
+<% end %>
