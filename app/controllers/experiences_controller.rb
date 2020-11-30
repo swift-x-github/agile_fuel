@@ -24,9 +24,10 @@ class ExperiencesController < ApplicationController
 
   # POST /experiences
   # POST /experiences.json
+  #<td><%= link_to experience.total_raiting, experience_responses_path(experience)  %></td>
   def create
     @experience = Experience.new(experience_params)
-
+    @experience.rate =  0
     respond_to do |format|
       if @experience.save
         format.html { redirect_to @experience, notice: 'Experience was successfully created.' }
@@ -41,9 +42,10 @@ class ExperiencesController < ApplicationController
   # PATCH/PUT /experiences/1
   # PATCH/PUT /experiences/1.json
   def update
+    @experience.rate = @experience.total_raiting
     respond_to do |format|
       if @experience.update(experience_params)
-        format.html { redirect_to @experience, notice: 'Experience was successfully updated.' }
+        format.html { redirect_to @experience, notice: 'Experience was successfully updated. '  }
         format.json { render :show, status: :ok, location: @experience }
       else
         format.html { render :edit }

@@ -24,8 +24,9 @@ class ResponsesController < ApplicationController
 
   # POST experiences/1/responses
   def create
+    
     @response = @experience.responses.build(response_params)
-
+   
     if @response.save
       redirect_to([@response.experience, @response], notice: 'Response was successfully created.')
     else
@@ -35,6 +36,8 @@ class ResponsesController < ApplicationController
 
   # PUT experiences/1/responses/1
   def update
+    #@response.experience.rate =  @response.experience.total_raiting
+    @experience.rate = @experience.total_raiting
     if @response.update_attributes(response_params)
       redirect_to([@response.experience, @response], notice: 'Response was successfully updated.')
     else
@@ -44,6 +47,7 @@ class ResponsesController < ApplicationController
 
   # DELETE experiences/1/responses/1
   def destroy
+    
     @response.destroy
 
     redirect_to experience_responses_url(@experience)
@@ -53,10 +57,12 @@ class ResponsesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_experience
       @experience = Experience.find(params[:experience_id])
+      
     end
 
     def set_response
       @response = @experience.responses.find(params[:id])
+
     end
 
     # Only allow a trusted parameter "white list" through.
